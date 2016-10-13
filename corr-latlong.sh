@@ -384,7 +384,7 @@ OPTIND=1         # ReSET p_status='G',in case getopts has been used previously i
 geocorrection_type=""
 while getopts "nu" opt; do
     case "$opt" in
-    g)  geocorrection_type="p_status='N'"
+    n)  geocorrection_type="p_status='N'"
         ;;
     u)  geocorrection_type="p_status='U'"
         ;;
