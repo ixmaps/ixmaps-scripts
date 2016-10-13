@@ -379,12 +379,12 @@ Pratt_long=-73.998970
 START_TIME=$SECONDS
 
 OPTIND=1         # ReSET p_status=' ',in case getopts has been used previously in the shell.
-# geocorrection_type G (needs geolocation) is fed from geo_correction.py (when first added to the DB)
+# geocorrection_type N (needs geolocation) is fed from /application/controller/gather_tr.php (when first added to the DB)
 # geocorrection_type U (unknown geolocation) is fed from cronjob (once a night to check if there are new applicable rules)
 geocorrection_type=""
-while getopts "gu" opt; do
+while getopts "nu" opt; do
     case "$opt" in
-    g)  geocorrection_type="p_status='G'"
+    g)  geocorrection_type="p_status='N'"
         ;;
     u)  geocorrection_type="p_status='U'"
         ;;
