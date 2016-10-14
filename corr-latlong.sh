@@ -1755,6 +1755,7 @@ update ip_addr_info SET p_status='G',asnum='15290' where $geocorrection_type and
 update ip_addr_info SET p_status='G',asnum='14361' where $geocorrection_type and asnum='-1' and hostname like '%.hopone.net%';
 "
 
+# set all uncorrected to U (unknown) so they only get checked by the cronjob once a day
 psql ixmaps -c "update ip_addr_info SET p_status='U' where p_status='N';"
 
 END_TIME=$((SECONDS-START_TIME))
