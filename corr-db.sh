@@ -1,7 +1,7 @@
 #!/bin/bash
 # this script updates city information in the DB to match the longitude and latitudes (which have been changed by corr-latlong.sh)
 
-scripts/corr-latlong.sh n
+scripts/corr-latlong.sh -u
 
 now=`date +%Y%m%d`
 tmpdir=$HOME/tmp
