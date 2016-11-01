@@ -1,11 +1,12 @@
 #!/bin/bash
 # this script updates city information in the DB to match the longitude and latitudes (which have been changed by corr-latlong.sh)
 
-scripts/corr-latlong.sh -u
+# removed, since this is already running through cronjab
+#scripts/corr-latlong.sh -u
 
 now=`date +%Y%m%d`
 tmpdir=$HOME/tmp
-datadir=$HOME/ix-data
+datadir=$HOME/ix-data/mm-data
 
 psql ixmaps -A -F ' ' -t \
     -c "select lat,long,ip_addr from ip_addr_info where gl_override is not null" \
