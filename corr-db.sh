@@ -11,10 +11,10 @@ datadir=$HOME/ix-data/mm-data
 psql ixmaps -A -F ' ' -t \
     -c "select lat,long,ip_addr from ip_addr_info where gl_override is not null" \
     >${tmpdir}/lat_long_ip-${now}.out
-scripts/mmdba_apr8 -a -N -C -P${tmpdir}/lat_long_ip-${now}.out ${datadir}/GeoLiteCity.dat \
+/home/ixmaps/scripts/mmdba_apr8 -a -N -C -P ${tmpdir}/lat_long_ip-${now}.out ${datadir}/GeoLiteCity.dat \
     >${tmpdir}/fixup-${now}.out
 # wait 30 minutes
-python scripts/db_fix.py ${tmpdir}/fixup-${now}.out ${tmpdir}/fixup-${now}.sql
+python /home/ixmaps/scripts/db_fix.py ${tmpdir}/fixup-${now}.out ${tmpdir}/fixup-${now}.sql
 psql ixmaps <${tmpdir}/fixup-${now}.sql
 
 #clean up some outliers that Maxmind has listed too inexactly or exactly
