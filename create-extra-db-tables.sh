@@ -116,16 +116,6 @@ psql ixmaps -c "select traceroute_id into script_temp8 from us_origin_us_destina
 psql ixmaps -c "alter table script_temp8 rename column traceroute_id to id;"
 psql ixmaps -c "select * into us_to_us_non_nsa from script_temp8 join us_origin_us_destination on script_temp8.id = us_origin_us_destination.traceroute_id order by traceroute_id,hop;"
 
-# andrew is now a superuser, so this should no longer be necessary
-# echo ""
-# echo "Permissions..."
-# for table in `echo "SELECT schemaname || '.' || relname FROM pg_stat_user_tables;" | psql -A -t ixmaps`;
-# do
-#     echo "GRANT SELECT ON TABLE $table to andrew;"
-#     echo "GRANT SELECT ON TABLE $table to andrew;" | psql ixmaps
-# done
-#psql ixmaps -c "grant select, update on full_routes_large to andrew;"
-
 echo ""
 echo "Cleaning up temp tables..."
 psql ixmaps -c "drop table full_routes;"
