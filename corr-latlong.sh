@@ -293,6 +293,9 @@ Bilbao_lat=43.26
 Bilbao_long=-2.93
 Madrid_lat=40.4
 Madrid_long=-3.68
+Barcelona_lat=41.39
+Barcelona_long=2.15
+
 
 MexCity_lat=19.43
 MexCity_long=-99.13
@@ -1731,6 +1734,41 @@ update ip_addr_info SET p_status='G',lat=$HK_lat,long=$HK_long,gl_override=3 whe
 
 update ip_addr_info SET p_status='G',lat=48.9301,long=-122.725,gl_override=3 where $geocorrection_type and ip_addr='64.69.79.27';
 "
+
+
+#echo ""
+#echo "Andrew's routes for Barcelona conference"
+#echo "See email 'geocorrection work' around 01/29/2017"
+psql ixmaps -c "
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.121.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.122.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.67.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.82.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.86.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='81.46.10.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='81.46.112.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='81.46.131.0';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.106.161';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.81.46';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='81.46.131.81';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='81.46.6.53';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='81.46.7.61';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='193.149.1.154';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='193.149.1.18';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='193.149.1.26';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='195.95.153.74';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='213.140.50.246';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='213.140.53.116';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='217.124.114.206';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='80.58.81.50';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='94.142.103.177';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='94.142.103.185';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='212.92.32.238';
+
+update ip_addr_info SET p_status='G',lat=41.387187,long=2.111025,gl_override=999 where $geocorrection_type and ip_addr='84.88.11.8';
+"
+
+
 
 #echo ""
 #echo "Routers that have been moved. These obviously have to be applied last. These won't fire out of the box - remove the geocorrection_type and then readd after running the script"
