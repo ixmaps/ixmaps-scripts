@@ -491,7 +491,6 @@ update ip_addr_info SET p_status='G',lat=$Sea_lat,long=$Sea_long,gl_override=1 w
 update ip_addr_info SET p_status='G',lat=$SJ_lat,long=$SJ_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.sjc%' and (lat=38 or lat=38.9144);
 update ip_addr_info SET p_status='G',lat=$Was_lat,long=$Was_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.dca%' and (lat=38 or lat=38.9144);
 update ip_addr_info SET p_status='G',lat=$Ashburn_lat,long=$Ashburn_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.iad%' and (lat=38 or lat=38.9144);
-update ip_addr_info SET p_status='G',lat=$Atl_lat,long=$Atl_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.atl%' and (lat=38 or lat=38.9144);
 update ip_addr_info SET p_status='G',lat=$Bos_lat,long=$Bos_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.bos%' and (lat=38 or lat=38.9144);
 update ip_addr_info SET p_status='G',lat=$Mia_lat,long=$Mia_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.mia%' and (lat=38 or lat=38.9144);
 update ip_addr_info SET p_status='G',lat=$KC_lat,long=$KC_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.mci%' and (lat=38 or lat=38.9144);
@@ -522,6 +521,9 @@ update ip_addr_info SET p_status='G',lat=$ProvidenceRI_lat,long=$ProvidenceRI_lo
 
 update ip_addr_info SET p_status='G',lat=$Mtl_lat,long=$Mtl_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.ymq%' and (lat=38 or lat=38.9144);
 update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.yyz%' and (lat=38 or lat=38.9144);
+update ip_addr_info SET p_status='G',lat=$Van_lat,long=$Van_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.yvr%' and (lat=38 or lat=38.9144);
+
+update ip_addr_info SET p_status='G',lat=$Van_lat,long=$Van_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.yvr%' and (lat=38 or lat=38.9144);
 
 update ip_addr_info SET p_status='G',lat=$LDon_lat,long=$LDon_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.lon%' and (lat=38 or lat=38.9144 or lat=33.76 or lat=51.5);
 update ip_addr_info SET p_status='G',lat=$ADam_lat,long=$ADam_long,gl_override=1 where $geocorrection_type and asnum=174 and hostname like '%.ams%' and (lat=38 or lat=38.9144 or lat=33.76 or lat=51.5);
@@ -860,7 +862,7 @@ temp_lat="(lat=45.5 or lat=24.8667 or lat=-26.3167 or lat=43.6667 or lat=6.5 or 
 psql ixmaps -c "
 update ip_addr_info SET p_status='G',lat=$ChiEQ_lat,long=$ChiEQ_long,gl_override=2 where $geocorrection_type and asnum=6453 and hostname like '%Chicago%' and $temp_lat;
 update ip_addr_info SET p_status='G',lat=$AshEQ_lat,long=$AshEQ_long,gl_override=2 where $geocorrection_type and asnum=6453 and hostname like '%AEQ-Ashburn%' and $temp_lat;
-update ip_addr_info SET p_status='G',lat=$NYTelx_lat,long=$NYTelx_long,gl_override=2 where $geocorrection_type and asnum=6453 and (hostname like '%NYY-NewYork%' or hostname like '%NYY-New-York%' or hostname like '%NTO-NewYork%' or hostname like '%N60-NewYork%' or hostname like '%N0V-New-York%') and $temp_lat;
+update ip_addr_info SET p_status='G',lat=$NYTelx_lat,long=$NYTelx_long,gl_override=2 where $geocorrection_type and asnum=6453 and (hostname like '%NYY-NewYork%' or hostname like '%NYY-New-York%' or hostname like '%NTO-NewYork%' or hostname like '%N60-NewYork%' or hostname like '%N0V-New-York%' or hostname like '%NTO-New-York%') and $temp_lat;
 update ip_addr_info SET p_status='G',lat=$NYEQ_lat,long=$NYEQ_long,gl_override=2 where $geocorrection_type and asnum=6453 and hostname like '%NW8-NewYork%' and $temp_lat;
 update ip_addr_info SET p_status='G',lat=$Newark_lat,long=$Newark_long,gl_override=2 where $geocorrection_type and asnum=6453 and hostname like '%NJY-Newark%' and $temp_lat;
 update ip_addr_info SET p_status='G',lat=$AtlTelx_lat,long=$AtlTelx_long,gl_override=2 where $geocorrection_type and asnum=6453 and hostname like '%A56-Atlanta%' and $temp_lat;
@@ -1441,6 +1443,8 @@ update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 w
 update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='209.148.244.45';
 update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='216.187.113.130';
 update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='200.168.2.0';
+update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='67.223.102.174';
+update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='64.86.33.58';
 
 update ip_addr_info SET p_status='G',lat=$Scarb_lat,long=$Scarb_long,gl_override=3 where $geocorrection_type and ip_addr='64.86.85.2';
 
@@ -1518,6 +1522,7 @@ update ip_addr_info SET p_status='G',lat=$Van_lat,long=$Van_long,gl_override=3 w
 update ip_addr_info SET p_status='G',lat=$Van_lat,long=$Van_long,gl_override=3 where $geocorrection_type and ip_addr='216.18.13.42';
 update ip_addr_info SET p_status='G',lat=$Van_lat,long=$Van_long,gl_override=3 where $geocorrection_type and ip_addr='205.189.32.173';
 update ip_addr_info SET p_status='G',lat=$Van_lat,long=$Van_long,gl_override=3 where $geocorrection_type and ip_addr='96.1.214.151';
+update ip_addr_info SET p_status='G',lat=$Van_lat,long=$Van_long,gl_override=3 where $geocorrection_type and ip_addr='173.205.56.222';
 
 update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Victoria_long,gl_override=3 where $geocorrection_type and ip_addr='66.163.77.62';
 update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Victoria_long,gl_override=3 where $geocorrection_type and ip_addr='66.163.72.22';
@@ -1528,6 +1533,7 @@ update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Victoria_long,gl_ov
 update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Victoria_long,gl_override=3 where $geocorrection_type and ip_addr='207.23.241.113';
 update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Victoria_long,gl_override=3 where $geocorrection_type and ip_addr='66.163.72.21';
 update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Victoria_long,gl_override=3 where $geocorrection_type and ip_addr='66.163.75.166';
+update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Victoria_long,gl_override=3 where $geocorrection_type and ip_addr='64.59.162.0';
 
 update ip_addr_info SET p_status='G',lat=$Win_lat,long=$Win_long,gl_override=3 where $geocorrection_type and ip_addr='207.35.134.0';
 update ip_addr_info SET p_status='G',lat=$Win_lat,long=$Win_long,gl_override=3 where $geocorrection_type and ip_addr='172.16.0.9';
@@ -1592,6 +1598,7 @@ update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 whe
 update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='154.54.3.93';
 update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='63.243.128.70';
 update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='198.32.118.101';
+update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='198.32.118.40';
 
 update ip_addr_info SET p_status='G',lat=$Chi_lat,long=$Chi_long,gl_override=3 where $geocorrection_type and hostname like '%esna.phub.net.cable.rogers.com%';
 update ip_addr_info SET p_status='G',lat=$Chi_lat,long=$Chi_long,gl_override=3 where $geocorrection_type and ip_addr='144.232.9.69';
@@ -1658,6 +1665,7 @@ update ip_addr_info SET p_status='G',lat=$LA_lat,long=$LA_long,gl_override=3 whe
 update ip_addr_info SET p_status='G',lat=$LA_lat,long=$LA_long,gl_override=3 where $geocorrection_type and ip_addr='38.104.84.34';
 update ip_addr_info SET p_status='G',lat=$LA_lat,long=$LA_long,gl_override=3 where $geocorrection_type and ip_addr='198.32.251.45';
 update ip_addr_info SET p_status='G',lat=$LA_lat,long=$LA_long,gl_override=3 where $geocorrection_type and ip_addr='66.109.6.213';
+update ip_addr_info SET p_status='G',lat=$LA_lat,long=$LA_long,gl_override=3 where $geocorrection_type and ip_addr='38.88.252.161';
 
 update ip_addr_info SET p_status='G',lat=$Sea_lat,long=$Sea_long,gl_override=3 where $geocorrection_type and ip_addr='66.113.197.6';
 update ip_addr_info SET p_status='G',lat=$Sea_lat,long=$Sea_long,gl_override=3 where $geocorrection_type and hostname like '%sel.savvis%';
@@ -1764,6 +1772,7 @@ update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_
 update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='94.142.103.177';
 update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='94.142.103.185';
 update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='212.92.32.238';
+update ip_addr_info SET p_status='G',lat=$Barcelona_lat,long=$Barcelona_long,gl_override=3 where $geocorrection_type and ip_addr='212.92.32.238';
 
 update ip_addr_info SET p_status='G',lat=41.387187,long=2.111025,gl_override=999 where $geocorrection_type and ip_addr='84.88.11.8';
 "
@@ -1787,6 +1796,7 @@ psql ixmaps -c "update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Vic
 #Currently only for -1s
 psql ixmaps -c "
 update ip_addr_info SET p_status='G',asnum='577' where $geocorrection_type and asnum='-1' and hostname like '%.bell.ca%';
+update ip_addr_info SET p_status='G',asnum='852' where $geocorrection_type and asnum='-1' and hostname like '%.telus.com%';
 update ip_addr_info SET p_status='G',asnum='13768' where $geocorrection_type and asnum='-1' and hostname like '%.peer1.net%';
 update ip_addr_info SET p_status='G',asnum='209' where $geocorrection_type and asnum='-1' and hostname like '%.qwest.net%';
 update ip_addr_info SET p_status='G',asnum='15290' where $geocorrection_type and asnum='-1' and hostname like '%.allstream.net%';
