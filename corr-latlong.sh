@@ -1598,7 +1598,6 @@ update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 whe
 update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='154.54.3.93';
 update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='63.243.128.70';
 update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='198.32.118.101';
-update ip_addr_info SET p_status='G',lat=$NY_lat,long=$NY_long,gl_override=3 where $geocorrection_type and ip_addr='198.32.118.40';
 
 update ip_addr_info SET p_status='G',lat=$Chi_lat,long=$Chi_long,gl_override=3 where $geocorrection_type and hostname like '%esna.phub.net.cable.rogers.com%';
 update ip_addr_info SET p_status='G',lat=$Chi_lat,long=$Chi_long,gl_override=3 where $geocorrection_type and ip_addr='144.232.9.69';
