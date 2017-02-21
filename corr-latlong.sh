@@ -858,7 +858,7 @@ update ip_addr_info SET p_status='G',lat=$VanNuys_lat,long=$VanNuys_long,gl_over
 #echo ""
 #echo "Tata"
 #The generic LA, Dallas and Montreal locations below can likely be made more exact
-temp_lat="(lat=45.5 or lat=24.8667 or lat=-26.3167 or lat=43.6667 or lat=6.5 or lat=42.3626 or lat=18.5392 or lat=15.5511)"
+temp_lat="(lat=45.5 or lat=24.8667 or lat=-26.3167 or lat=43.6667 or lat=6.5 or lat=42.3626 or lat=18.5392 or lat=15.5511 or lat=39.7351)"
 psql ixmaps -c "
 update ip_addr_info SET p_status='G',lat=$ChiEQ_lat,long=$ChiEQ_long,gl_override=2 where $geocorrection_type and asnum=6453 and hostname like '%Chicago%' and $temp_lat;
 update ip_addr_info SET p_status='G',lat=$AshEQ_lat,long=$AshEQ_long,gl_override=2 where $geocorrection_type and asnum=6453 and hostname like '%AEQ-Ashburn%' and $temp_lat;
