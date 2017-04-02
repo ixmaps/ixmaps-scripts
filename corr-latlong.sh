@@ -1445,6 +1445,7 @@ update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 w
 update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='200.168.2.0';
 update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='67.223.102.174';
 update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='64.86.33.58';
+update ip_addr_info SET p_status='G',lat=$Tor_lat,long=$Tor_long,gl_override=3 where $geocorrection_type and ip_addr='64.230.104.0';
 
 update ip_addr_info SET p_status='G',lat=$Scarb_lat,long=$Scarb_long,gl_override=3 where $geocorrection_type and ip_addr='64.86.85.2';
 
@@ -1793,14 +1794,16 @@ psql ixmaps -c "update ip_addr_info SET p_status='G',lat=$Victoria_lat,long=$Vic
 #echo ""
 #echo "Correcting ASNs"
 #Currently only for -1s
-psql ixmaps -c "
-update ip_addr_info SET p_status='G',asnum='577' where $geocorrection_type and asnum='-1' and hostname like '%.bell.ca%';
-update ip_addr_info SET p_status='G',asnum='852' where $geocorrection_type and asnum='-1' and hostname like '%.telus.com%';
-update ip_addr_info SET p_status='G',asnum='13768' where $geocorrection_type and asnum='-1' and hostname like '%.peer1.net%';
-update ip_addr_info SET p_status='G',asnum='209' where $geocorrection_type and asnum='-1' and hostname like '%.qwest.net%';
-update ip_addr_info SET p_status='G',asnum='15290' where $geocorrection_type and asnum='-1' and hostname like '%.allstream.net%';
-update ip_addr_info SET p_status='G',asnum='14361' where $geocorrection_type and asnum='-1' and hostname like '%.hopone.net%';
-"
+#removing these for now - setting p_status to 'G' is wrong (they won't get geocorrection or vice versa)
+# psql ixmaps -c "
+# update ip_addr_info SET p_status='G',asnum='577' where $geocorrection_type and asnum='-1' and hostname like '%.bell.ca%';
+# update ip_addr_info SET p_status='G',asnum='852' where $geocorrection_type and asnum='-1' and hostname like '%.telus.com%';
+# update ip_addr_info SET p_status='G',asnum='13768' where $geocorrection_type and asnum='-1' and hostname like '%.peer1.net%';
+# update ip_addr_info SET p_status='G',asnum='209' where $geocorrection_type and asnum='-1' and hostname like '%.qwest.net%';
+# update ip_addr_info SET p_status='G',asnum='15290' where $geocorrection_type and asnum='-1' and hostname like '%.allstream.net%';
+# update ip_addr_info SET p_status='G',asnum='14361' where $geocorrection_type and asnum='-1' and hostname like '%.hopone.net%';
+# update ip_addr_info SET p_status='G',asnum='577' where $geocorrection_type and asnum='-1' and ip_addr = '64.230.104.0';
+# "
 
 # set all uncorrected to U (unknown) so they only get checked by the cronjob once a day
 psql ixmaps -c "update ip_addr_info SET p_status='U' where p_status='N';"
