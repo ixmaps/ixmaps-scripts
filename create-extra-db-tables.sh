@@ -17,6 +17,7 @@
 #	input=$1
 #fi
 #if [ $input = "y" ]; then
+    psql ixmaps -c "drop table if exists full_routes;"
     psql ixmaps -c "drop table if exists full_routes_last_hop;"
     psql ixmaps -c "drop table if exists ca_origin;"
     psql ixmaps -c "drop table if exists ca_destination;"
