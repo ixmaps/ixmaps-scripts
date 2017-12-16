@@ -1,4 +1,5 @@
-### These are convenience scripts for dealing with the database and report generation. None are necessary for the server to run properly.
+## Description
+These are convenience scripts for dealing with the database and report generation. None are necessary for the server to run properly.
 
 ## License
 Copyright (C) 2016 IXmaps.
