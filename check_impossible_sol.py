@@ -16,8 +16,10 @@ from math import radians, cos, sin, asin, sqrt
 # NB: these are now embedded in the code, do not need to run these manually
 # alter table temp1 add column min_latency integer, add column hop_time integer;
 # alter table temp1 drop column attempt, drop column status, drop column rtt_ms;
-# select temp1.*,ip.mm_lat,ip.mm_long into temp2 from temp1 join ip_addr_info as ip on temp1.ip_addr = ip.ip_addr;
+# select temp1.*,ip.lat,ip.long into temp2 from temp1 join ip_addr_info as ip on temp1.ip_addr = ip.ip_addr;
 # alter table temp2 add column sol_time float, add column sol_flag integer;
+
+# LEGACY? Either way, this is now likely broken after moving off  in ip_addr_info
 
 def main():
     try:
@@ -67,7 +69,7 @@ def set_min_latency(conn, cur):
 
 
 def set_speed_of_light(conn, cur):
-    # cur.execute("""SELECT temp1.*,ip.mm_lat,ip.mm_long INTO temp2 FROM temp1 JOIN ip_addr_info AS ip ON temp1.ip_addr = ip.ip_addr""")
+    # cur.execute("""SELECT temp1.*,ip.lat,ip.long INTO temp2 FROM temp1 JOIN ip_addr_info AS ip ON temp1.ip_addr = ip.ip_addr""")
     # cur.execute("""ALTER TABLE temp2 ADD COLUMN sol_time float, ADD COLUMN sol_flag integer""")
     # unflag everything
     # cur.execute("""UPDATE temp2 SET sol_flag = NULL""")
@@ -85,11 +87,11 @@ def set_speed_of_light(conn, cur):
             print ip['hop'],": ",ip['ip_addr']
 
             if ip['hop'] != 1:
-                prev_lat = ips[index-1]['mm_lat']
-                prev_long = ips[index-1]['mm_long']
+                prev_lat = ips[index-1]['lat']
+                prev_long = ips[index-1]['long']
                 prev_hop = ips[index-1]['hop']
 
-                hop_distance = haversine(prev_lat, prev_long, ip['mm_lat'], ip['mm_long'])
+                hop_distance = haversine(prev_lat, prev_long, ip['lat'], ip['long'])
                 # SOL in fibre is about 2/3 that in ether, so roughly 200,000km/sec or 200km/ms
                 time = hop_distance/200
 
